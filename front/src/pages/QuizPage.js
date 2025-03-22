@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { useSearchParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import axios from 'axios';
-import { getApiUrl } from '../utils/getApiUrl';
 
 import styles from "./QuizPage.module.css"
 
@@ -11,7 +10,7 @@ export default function QuizPage() {
     const navigate = useNavigate();
     const [searchParams] = useSearchParams();
     const quizId = searchParams.get('id');
-    const apiUrl = getApiUrl();
+    const apiUrl = window.env.REACT_APP_API_URL;
 
     if (!quizId) {
         navigate('/');

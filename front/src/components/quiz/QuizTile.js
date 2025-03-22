@@ -1,11 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./QuizTile.module.css"
 import axios from 'axios';
-import { getApiUrl } from '../../utils/getApiUrl';
 
 const QuizTile = ({ quiz }) => {
     const navigate = useNavigate();
-    const apiUrl = getApiUrl();
+    const apiUrl = window.env.REACT_APP_API_URL;
 
     const editAction = (e) => {
         navigate(`/editQuiz?id=${quiz.id}`);

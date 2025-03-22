@@ -3,10 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { useSearchParams } from 'react-router-dom';
 import axios from 'axios';
 import styles from "./NewQuizPage.module.css"
-import { getApiUrl } from '../utils/getApiUrl';
 
 export default function NewQuizPage() {
-    const apiUrl = getApiUrl();
+    const apiUrl = window.env.REACT_APP_API_URL;
     const navigate = useNavigate();
     const [searchParams] = useSearchParams();
     const [quizId, setQuizId] = useState(searchParams.get('id'));
