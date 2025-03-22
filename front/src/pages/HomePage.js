@@ -4,13 +4,14 @@ import { useNavigate } from "react-router-dom";
 import styles from "./NewQuizPage.module.css"
 import axios from 'axios';
 import { useState } from 'react';
+import { getApiUrl } from '../utils/getApiUrl';
 
 export default function HomePage() {
     const navigate = useNavigate();
     const [quizzes, setQuizzes] = useState([]);
     const [sort, setSort] = useState('name');
     const [order, setOrder] = useState('asc');
-    const apiUrl = window.env.REACT_APP_API_URL;
+    const apiUrl = getApiUrl();
 
     const handleSortTypeChange = (sortType) => {
         switch (sortType) {
