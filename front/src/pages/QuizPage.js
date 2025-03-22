@@ -31,7 +31,7 @@ export default function QuizPage() {
 
     useEffect(() => {
         axios
-            .get(`http://localhost:5000/quiz/${quizId}`)
+            .get(`${process.env.REACT_APP_API_URL}/quiz/${quizId}`)
             .then((response) => {
                 if (response.data && response.data.id) {
                     console.log(response.data);
@@ -185,7 +185,7 @@ export default function QuizPage() {
         setIsQuizCompleted(true);
 
         axios
-            .post(`http://localhost:5000/quiz-result/`, {
+            .post(`${process.env.REACT_APP_API_URL}/quiz-result/`, {
                 "quizId": quiz.id,
                 spendedTimeInSeconds,
                 "answers": selectedAnswers

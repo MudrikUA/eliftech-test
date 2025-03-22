@@ -47,7 +47,7 @@ export default function HomePage() {
         }
 
         axios
-            .get(`http://localhost:5000/quiz/`, {
+            .get(`${process.env.REACT_APP_API_URL}/quiz/`, {
                 params: {
                     sort: sort,
                     order: order

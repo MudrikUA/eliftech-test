@@ -16,7 +16,7 @@ const QuizTile = ({ quiz }) => {
     const deleteAction = (e) => {
         console.log('delete');
         axios
-            .delete(`http://localhost:5000/quiz/${quiz.id}`)
+            .delete(`${process.env.REACT_APP_API_URL}/quiz/${quiz.id}`)
             .then((response) => {
                 if (response.data) {
                     window.location.reload(); 

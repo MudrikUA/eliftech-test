@@ -128,7 +128,7 @@ export default function NewQuizPage() {
     const saveQuiz = (updatedQuiz) => {
         if (!quiz.id) {
             axios
-                .post("http://localhost:5000/quiz/", updatedQuiz)
+                .post(`${process.env.REACT_APP_API_URL}/quiz/`, updatedQuiz)
                 .then((response) => {
                     console.log('Post- ' + response.data)
                     navigate('/');
@@ -138,7 +138,7 @@ export default function NewQuizPage() {
                 });
         } else {
             axios
-                .put(`http://localhost:5000/quiz/${quiz.id}`, updatedQuiz)
+                .put(`${process.env.REACT_APP_API_URL}/quiz/${quiz.id}`, updatedQuiz)
                 .then((response) => {
                     console.log('Put- ' + response.data)
                     navigate('/');
@@ -151,7 +151,7 @@ export default function NewQuizPage() {
 
     useEffect(() => {
         axios
-            .get(`http://localhost:5000/quiz/${quizId}`)
+            .get(`${process.env.REACT_APP_API_URL}/quiz/${quizId}`)
             .then((response) => {
                 if (response.data && response.data.id) {
                     console.log(response.data);
