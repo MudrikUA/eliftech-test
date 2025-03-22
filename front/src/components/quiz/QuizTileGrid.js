@@ -43,7 +43,7 @@ const QuizTileGrid = ({ quizzes: initialQuizzes }) => {
         setQuizzes(initialQuizzes);
     }, [initialQuizzes])
 
-    return (
+    return quizzes && Array.isArray(quizzes) ?
         <div className="quiz-grid-container">
             <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
                 <SortableContext items={quizzes.map(quiz => quiz.id)} strategy={rectSortingStrategy}>
@@ -54,23 +54,7 @@ const QuizTileGrid = ({ quizzes: initialQuizzes }) => {
                     </div>
                 </SortableContext>
             </DndContext>
-        </div>
-    );
+        </div> : <></>
 };
 
 export default QuizTileGrid;
-
-
-// import QuizTile from "./QuizTile";
-// import styles from "./QuizTileGrid.module.css"
-
-// const QuizTileGrid = ({ quizzes }) => {
-
-//     return <div className={styles.quizTileGrid}>
-//         {quizzes.map(quiz => (
-//             <QuizTile quiz={quiz} key={quiz.id} />
-//         ))}
-//     </div>
-// }
-
-// export default QuizTileGrid;
