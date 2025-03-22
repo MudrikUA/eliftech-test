@@ -10,7 +10,7 @@ export default function QuizPage() {
     const navigate = useNavigate();
     const [searchParams] = useSearchParams();
     const quizId = searchParams.get('id');
-    const apiUrl = window.env.REACT_APP_API_URL;
+    const apiUrl =  window.env ? window.env.REACT_APP_API_URL : 'http://localhost:5000';;
 
     if (!quizId) {
         navigate('/');
