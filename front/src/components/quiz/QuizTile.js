@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./QuizTile.module.css"
 import axios from 'axios';
-import { getApiUrl } from '../utils/getApiUrl';
+import { getApiUrl } from '../../utils/getApiUrl';
 
 const QuizTile = ({ quiz }) => {
     const navigate = useNavigate();
