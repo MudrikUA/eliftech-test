@@ -5,7 +5,7 @@ import axios from 'axios';
 import styles from "./NewQuizPage.module.css"
 
 export default function NewQuizPage() {
-    console.log('run');
+    const apiUrl = window.env.REACT_APP_API_URL;
     const navigate = useNavigate();
     const [searchParams] = useSearchParams();
     const [quizId, setQuizId] = useState(searchParams.get('id'));
@@ -128,7 +128,7 @@ export default function NewQuizPage() {
     const saveQuiz = (updatedQuiz) => {
         if (!quiz.id) {
             axios
-                .post(`${process.env.REACT_APP_API_URL}/quiz/`, updatedQuiz)
+                .post(`${apiUrl}/quiz/`, updatedQuiz)
                 .then((response) => {
                     console.log('Post- ' + response.data)
                     navigate('/');
@@ -138,7 +138,7 @@ export default function NewQuizPage() {
                 });
         } else {
             axios
-                .put(`${process.env.REACT_APP_API_URL}/quiz/${quiz.id}`, updatedQuiz)
+                .put(`${apiUrl}/quiz/${quiz.id}`, updatedQuiz)
                 .then((response) => {
                     console.log('Put- ' + response.data)
                     navigate('/');
@@ -151,7 +151,7 @@ export default function NewQuizPage() {
 
     useEffect(() => {
         axios
-            .get(`${process.env.REACT_APP_API_URL}/quiz/${quizId}`)
+            .get(`${apiUrl}/quiz/${quizId}`)
             .then((response) => {
                 if (response.data && response.data.id) {
                     console.log(response.data);

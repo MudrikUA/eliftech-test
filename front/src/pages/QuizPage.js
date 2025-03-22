@@ -10,6 +10,7 @@ export default function QuizPage() {
     const navigate = useNavigate();
     const [searchParams] = useSearchParams();
     const quizId = searchParams.get('id');
+    const apiUrl = window.env.REACT_APP_API_URL;
 
     if (!quizId) {
         navigate('/');
@@ -31,7 +32,7 @@ export default function QuizPage() {
 
     useEffect(() => {
         axios
-            .get(`${process.env.REACT_APP_API_URL}/quiz/${quizId}`)
+            .get(`${apiUrl}/quiz/${quizId}`)
             .then((response) => {
                 if (response.data && response.data.id) {
                     console.log(response.data);
@@ -185,7 +186,7 @@ export default function QuizPage() {
         setIsQuizCompleted(true);
 
         axios
-            .post(`${process.env.REACT_APP_API_URL}/quiz-result/`, {
+            .post(`${apiUrl}/quiz-result/`, {
                 "quizId": quiz.id,
                 spendedTimeInSeconds,
                 "answers": selectedAnswers

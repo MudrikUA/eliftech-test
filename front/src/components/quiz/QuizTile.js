@@ -4,6 +4,7 @@ import axios from 'axios';
 
 const QuizTile = ({ quiz }) => {
     const navigate = useNavigate();
+    const apiUrl = window.env.REACT_APP_API_URL;
 
     const editAction = (e) => {
         navigate(`/editQuiz?id=${quiz.id}`);
@@ -16,7 +17,7 @@ const QuizTile = ({ quiz }) => {
     const deleteAction = (e) => {
         console.log('delete');
         axios
-            .delete(`${process.env.REACT_APP_API_URL}/quiz/${quiz.id}`)
+            .delete(`${apiUrl}/quiz/${quiz.id}`)
             .then((response) => {
                 if (response.data) {
                     window.location.reload(); 

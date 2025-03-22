@@ -10,6 +10,7 @@ export default function HomePage() {
     const [quizzes, setQuizzes] = useState([]);
     const [sort, setSort] = useState('name');
     const [order, setOrder] = useState('asc');
+    const apiUrl = window.env.REACT_APP_API_URL;
 
     const handleSortTypeChange = (sortType) => {
         switch (sortType) {
@@ -47,7 +48,7 @@ export default function HomePage() {
         }
 
         axios
-            .get(`${process.env.REACT_APP_API_URL}/quiz/`, {
+            .get(`${apiUrl}/quiz/`, {
                 params: {
                     sort: sort,
                     order: order
