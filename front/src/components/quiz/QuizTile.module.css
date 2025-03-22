@@ -1,0 +1,49 @@
+.quizTile {
+    border: 1px solid;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 20px;
+    justify-content: space-between;
+    background-color: white;
+    user-select: none;
+}
+
+.quizTileMenuBtn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: relative;
+}
+
+.quizTileMenu li {
+    background-color: white;
+    list-style-type: none;
+    border-bottom: 1px solid darkgrey;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.quizTileMenu {
+    display: none;
+    position: absolute;
+    z-index: 2;
+}
+
+.quizTileMenuBtn:hover .quizTileMenu {
+    display: block;
+}
+
+.quizTileMenu a {
+    text-decoration: none;
+    color: black;
+}
+
+.quizTileTitleInfo {
+    text-align: left;
+}
+
+.quizTileMenuBtn span {
+    width: 25px;
+    cursor: pointer;
+}

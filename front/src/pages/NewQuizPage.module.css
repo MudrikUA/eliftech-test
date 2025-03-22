@@ -1,0 +1,73 @@
+.quizEditingBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 20px;
+}
+
+.quizEditingBtnBlock {
+    display: flex;
+    gap: 25px;
+}
+
+.quizDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.quizQuestion {
+    border: 1px solid #000;
+    padding: 25px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.btn {
+    border: 1px solid #000;
+    padding: 5px;
+    border-radius: 5px;
+    user-select: none;
+    cursor: pointer;
+    max-width: 150px;
+    min-width: 75px;
+    text-align: center;
+}
+
+.quizEditing {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.inlineStretch {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+input[type="text"] {
+    min-width: 575px;
+    font-size: medium;
+}
+
+.hide {
+    display: none;
+}
+
+.createBtn {
+    margin-left: 50px;
+}
+
+.menuGroup {
+    display: flex;
+    flex-direction: row;
+    padding: 0 76px;
+    justify-content: space-between;
+}

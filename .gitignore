@@ -1,0 +1,63 @@
+# 🔹 Node.js dependencies
+node_modules/
+.pnp
+.pnp.js
+.pnpm-store/
+
+# 🔹 Compiled output
+dist/
+build/
+
+# 🔹 Logs
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+debug.log
+
+# 🔹 OS-specific files
+.DS_Store
+Thumbs.db
+
+# 🔹 Tests & Coverage
+coverage/
+.nyc_output/
+
+# 🔹 IDEs and Editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# 🔹 VSCode settings
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# 🔹 Environment variables
+*.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# 🔹 Temp directories
+.temp/
+.tmp/
+
+# 🔹 Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# 🔹 Node.js diagnostic reports
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
