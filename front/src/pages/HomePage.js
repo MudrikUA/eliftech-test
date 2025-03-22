@@ -10,7 +10,7 @@ export default function HomePage() {
     const [quizzes, setQuizzes] = useState([]);
     const [sort, setSort] = useState('name');
     const [order, setOrder] = useState('asc');
-    const apiUrl = window.env ? window.env.REACT_APP_API_URL : 'http://localhost:5000';
+    const apiUrl = window.env ? window.env.REACT_APP_API_URL : "http://localhost:5000";
 
     const handleSortTypeChange = (sortType) => {
         switch (sortType) {

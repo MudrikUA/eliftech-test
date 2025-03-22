@@ -5,7 +5,7 @@ import axios from 'axios';
 import styles from "./NewQuizPage.module.css"
 
 export default function NewQuizPage() {
-    const apiUrl =  window.env ? window.env.REACT_APP_API_URL : 'http://localhost:5000';;
+    const apiUrl = window.env ? window.env.REACT_APP_API_URL : "http://localhost:5000";
     const navigate = useNavigate();
     const [searchParams] = useSearchParams();
     const [quizId, setQuizId] = useState(searchParams.get('id'));
