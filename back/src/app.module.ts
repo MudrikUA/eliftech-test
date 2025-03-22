@@ -12,16 +12,16 @@ import { UserAnswerModule } from './user-answer/user-answer.module';
 import { Question } from './question/question.model';
 import { Answer } from './answer/answer.model';
 import { QuizResult } from './quiz-result/quiz-result.model';
-import { ConfigModule } from '@nestjs/config';
 import { UserAnswer } from './user-answer/user-answer.model';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   controllers: [AppController],
   providers: [AppService],
   imports: [
-    // ConfigModule.forRoot({
-    //   envFilePath: `.${process.env.NODE_ENV}.env`
-    // }),
+    ConfigModule.forRoot({
+      envFilePath: `.env`
+    }),
     SequelizeModule.forRoot({
     dialect: 'postgres',
     host: process.env.POSTGRES_HOST,
